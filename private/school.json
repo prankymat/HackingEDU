@@ -1,0 +1,3 @@
+[{"SchoolID": 1, "SchoolName": "San Jose High School", "Street": "1234 San Jose ave", "City": "San Jose", "State": "CA"},
+{"SchoolID": 2, "SchoolName": "Homestead High School", "Street": "4312 Homestead rd", "City": "Cupertino", "State": "CA"},
+{"SchoolID": 3, "SchoolName": "Mountain View High School", "Street": "2143 California st", "City": "Mountain View", "State": "CA"}]
