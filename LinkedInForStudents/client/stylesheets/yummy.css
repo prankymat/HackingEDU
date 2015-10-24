@@ -52,4 +52,9 @@ div#sidenav{
   padding-left: 8px;
 }
 
+img#resize {
+  max-width: 30px;
+  height: auto;
+}
+
 
