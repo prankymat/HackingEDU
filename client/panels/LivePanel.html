@@ -1,0 +1,27 @@
+<template name="LivePanel">
+  {{> CreatePersonPanel}}
+  <div class="container">
+    <br />
+
+    {{#unless people_count}}
+    <h4 class="flow-text center-align">There aren't any people to show yet :(</h4>
+    {{/unless}}
+
+    <div class="row">
+      {{#each people}}
+      <div class="col s12 m6 l3">
+        {{> Person}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <div class="chip noselect default-cursor">
+      {{ people_count }} people now.
+    </div>
+    <button data-target="createPersonModal" class="modal-trigger btn-floating btn-large red" disabled="{{#if cannotModal}}disabled{{/if}}">
+      <i class="large material-icons">add</i>
+    </button>
+  </div>
+</template>
