@@ -1,0 +1,39 @@
+<template name="MainLayout">
+  <header>
+    {{> TopNav}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+  </header>
+
+  {{#unless connected}}
+  <div class="row notification noselect">
+     <div class="col s12 m4 l3" style="position: fixed; top: 5em; right: 1em;">
+       <div class="card blue-grey darken-1">
+         <div class="card-content white-text">
+           <span class="card-title">Trying to connect...</span>
+           <p>There seems to be a connection issue with the server.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+  {{/unless}}
+
+<div class="row">
+  <div class="col s3" style="padding: 0px;">
+  <aside>
+    {{> yield "aside"}}
+  </aside>
+  </div>
+  
+  <div class="col s9">
+  <article>
+    {{> yield}}
+  </article>
+  </div>
+</div>
+
+
+  <footer>
+    {{> yield "footer"}}
+  </footer>
+</template>
