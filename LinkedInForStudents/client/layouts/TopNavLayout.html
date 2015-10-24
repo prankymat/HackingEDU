@@ -4,6 +4,12 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo" style="margin-left:10px; font-weight: 400; font-family: 'Dancing Script', cursive;">HackingEDU</a>
         <ul class="right hide-on-med-and-down">
+          {{#unless currentUser}}
+          <li>{{> loginButtons}}</li>
+          {{/unless}}
+          {{#if currentUser}}
+          <li>{{currentUser}}</li>
+          {{/if}}
           <li><a href="{{pathFor 'test-people'}}">Test People</a></li>
         </ul>
       </div>
