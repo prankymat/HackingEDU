@@ -20,5 +20,6 @@ Router.route('/search/:searchType/:searchQuery', function(){
 });
 
 Router.route('/', function(){
+  this.layout('HomeLayout')
   this.render('HomePanel')
 })

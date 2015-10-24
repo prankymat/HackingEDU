@@ -1,8 +1,5 @@
 /* CSS declarations go here */
-div#sidenav{
-  height:100vh;
-  width: 100%;
-}
+
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -50,9 +47,4 @@ div#sidenav{
   font-size: 16px;
   line-height: 32px;
   padding-left: 8px;
-}
-
-img#resize {
-  max-width: 30px;
-  height: auto;
 }
