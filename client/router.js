@@ -16,7 +16,7 @@ Router.route('/search/:searchType/:searchQuery', function(){
 		data: function (){ return {searchQuery:this.params.searchQuery, searchType:this.params.searchType}}});
 	this.render('SearchSide',{
 		to:"aside",
-		data: function (){ return {searchQuery:this.params.searchQuery, searchType:this.params.searchType}}});});
+		data: function (){ return {searchQuery:this.params.searchQuery, searchType:this.params.searchType}}});
 });
 
 Router.route('/', function(){
