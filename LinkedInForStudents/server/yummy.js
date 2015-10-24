@@ -5,6 +5,8 @@ Achievement = new Mongo.Collection('achievement');
 Test = new Mongo.Collection('test');
 Comment = new Mongo.Collection('comment');
 
+Meteor.startup(function(){
+	console.log("called and inited")
 	if (Teacher.find().count() === 0) {
         var data = JSON.parse(Assets.getText("teacher.json"));
 
@@ -44,3 +46,4 @@ Comment = new Mongo.Collection('comment');
             Achievement.insert(item);
         })
     }
+	});

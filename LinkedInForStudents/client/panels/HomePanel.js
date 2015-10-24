@@ -4,10 +4,10 @@ Template.HomePanel.onRendered(function(){
 
 Template.HomePanel.helpers({
   teachersResults: function() {
-    return Teachers.find({$or: [{"FirstName":{'$regex':Session.get('home-query')}},{"LastName":{'$regex':Session.get('home-query')}}]})
+    return Teacher.find({$or: [{"FirstName":{'$regex':Session.get('home-query')}},{"LastName":{'$regex':Session.get('home-query')}}]})
   },
   schoolsResults: function() {
-    return Schools.find({SchoolName: {'$regex':Session.get('home-query')}})
+    return School.find({SchoolName: {'$regex':Session.get('home-query')}})
   },
   isQuerying: function() {
     console.log("checking")
