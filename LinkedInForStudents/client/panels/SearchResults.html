@@ -1,0 +1,16 @@
+<template name="SearchResults">
+	{{#unless people_count}}
+    <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
+    {{/unless}}
+
+    {{#if people_count}}
+    <h4 class="flow-text center-align">Showing {{people_count}} results for "{{query_param}}"</h4>
+    {{/if}}
+
+    {{#each results}}
+	<div class="section">
+		{{this}}
+    </div>
+    <div class="divider"></div>
+    {{/each}}
+</template>
