@@ -5,10 +5,8 @@ Template.SearchSide.helpers({
 
   results: function() {
   	if(this.searchType === "teacher"){
-  		return Teacher.find({$or: [{"FirstName":{'$regex':this.searchQuery}},{"LastName":{'$regex':this.searchQuery}}]}).then(function(results){
-        console.log(results);
-        return results;
-      });
+  		var arr = Teacher.find({$or: [{"FirstName":{'$regex':this.searchQuery}},{"LastName":{'$regex':this.searchQuery}}]}).fetch();
+      console.log(arr);
   	}
   	else{
   		return School.find({"SchoolName":{'$regex':this.searchQuery}});
