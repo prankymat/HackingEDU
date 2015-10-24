@@ -1,26 +1,14 @@
 Template.SearchResults.helpers({
-  result_count: function() {
-  	if(searchType === "teacher"){
-  		return Teachers.find({$or: [{"FirstName":{'$regex':searchQuery}},{"LastName":{'$regex':searchQuery}}]}).count();
-  	}
-  	else if(searchType === "school"){
-  		return Schools.find({"SchoolName":{'$regex':searchQuery}}).count();
-  	}
-  	else{
-  		return 0;
-  	}
-  },
-
   query_param: function() {
     return this.searchQuery;
   },
 
   results: function() {
-  	if(searchType === "teacher"){
-  		return Teachers.find({$or: [{"FirstName":{'$regex':searchQuery}},{"LastName":{'$regex':searchQuery}}]});
+  	if(this.searchType === "teacher"){
+  		return Teachers.find({$or: [{"FirstName":{'$regex':this.searchQuery}},{"LastName":{'$regex':this.searchQuery}}]});
   	}
-  	else if(searchType === "school"){
-  		return Schools.find({"SchoolName":{'$regex':searchQuery}});
+  	else{
+  		return Schools.find({"SchoolName":{'$regex':this.searchQuery}});
   	}
   },
 
