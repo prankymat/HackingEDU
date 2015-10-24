@@ -44,3 +44,34 @@ Comment = new Mongo.Collection('comment');
             Achievement.insert(item);
         })
     }
+
+    //These code add the teacher to the Schools
+    schools = School.find({}).fetch()
+    teachers = Teacher.find({}).fetch()
+    for (var i = 0; j < teachers.length; i++)
+    {
+        for (var j = 0; j < schools.length; j++) 
+        {
+            var schoolID = schools[j].SchoolID
+            if (schoolID == teachers[i].Schools)
+            {
+                School.update({SchoolID: schoolID}, {$addToSet: {Teachers: teachers[j].TeacherID}})
+                break
+            }
+        }
+    }
+
+    //These code will add the test to teacher
+    tests = Test.find({}).fetch()
+    for (var i = 0; i < tests.length; i++)
+    {
+        for (var j = 0; j < teachers.length; j++)
+        {
+            var teacherID = teachers[j].TeacherID
+            if (teacherID == tests[i].TeacherID)
+            {
+                Teacher.update({TeacherID: teacherID}, {$addToSet: {Tests: tests[i].TestID}})
+                break
+            }
+        }
+    }

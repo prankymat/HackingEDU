@@ -4,5 +4,4 @@
 {"AhieveID": 3, "TeacherID": [1], "StudentID": [2], "Title": "Second Place in Speech contest", "DateOfEvent": "7/17/2013", "Description": "This teach trained his student to earn the second place in a speed contest"},
 {"AhieveID": 4, "TeacherID": [4], "StudentID": [16, 13, 10, 3, 5, 2, 9, 7] , "Title": "Pumpkin Carving", "DateOfEvent": "10/30/2014" , "Description": "The teacher brought her student to a Pumpkin Carving event and they had lots of fun there. "},
 {"AhieveID": 5, "TeacherID": [2, 4], "StudentID": [10, 14, 9, 12, 15, 11, 18, 5, 16, 4, 2, 8] , "Title": "Dance for Fund raising", "DateOfEvent": "4/18/2015", "Description": "The teachers helped this group of students to host a fund raising event where the collect money through dance."}
-
 ]
