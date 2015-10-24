@@ -7,32 +7,33 @@
 
   </div>
   <div class="section white">
-    <div class="row container">
+    <div class="row container float-search">
       <div class="row" style="position: absolute; z-index: 100; width: 60em;">
-        <div class="float-search col s8 offset-s3" style="position: absolute; top:-80px;">
+        <div class="col s8 offset-s3" style="position: absolute; top:-80px;">
           <div class="card-panel">
             <form class="" action="index.html" method="post">
               <input placeholder="Search for a teacher" id="query" type="text" class="validate">
             </form>
-
+            {{#if isQuerying}}
             {{#if teachersResults.count}}
-            <h4>Teachers</h4>
+            <h5>Teachers</h5>
             <ul class="collapsible">
               {{#each teachersResults}}
               <li>
-                <div class="collapsible-header">{{name}}</div>
+                <div class="collapsible-header">{{FirstName}} {{LastName}}</div>
               </li>
               {{/each}}
             </ul>
             {{/if}} {{#if schoolsResults.count}}
-            <h4>Schools</h4>
+            <h5>Schools</h5>
             <ul class="collapsible">
               {{#each schoolsResults}}
               <li>
-                <div class="collapsible-header">{{name}}</div>
+                <div class="collapsible-header">{{SchoolName}}</div>
               </li>
               {{/each}}
             </ul>
+            {{/if}}
             {{/if}}
 
 
