@@ -18,13 +18,20 @@
    </div>
   {{/unless}}
 
+<div class="row">
+  <div class="col s3" style="padding: 0px;">
   <aside>
     {{> yield "aside"}}
   </aside>
-
+  </div>
+  
+  <div class="col s9">
   <article>
     {{> yield}}
   </article>
+  </div>
+</div>
+
 
   <footer>
     {{> yield "footer"}}
