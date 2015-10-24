@@ -30,10 +30,17 @@ Comment = new Mongo.Collection('comment');
     }
 
     if (Test.find().count() === 0) {
-        console.log("load test file");
         var data = JSON.parse(Assets.getText("test.json"));
 
         data.forEach(function (item, index, array) {
             Test.insert(item);
+        })
+    }
+
+    if (Achievement.find().count() === 0) {
+        var data = JSON.parse(Assets.getText("achievement.json"));
+
+        data.forEach(function (item, index, array) {
+            Achievement.insert(item);
         })
     }
