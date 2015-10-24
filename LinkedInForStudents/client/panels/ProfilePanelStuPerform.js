@@ -1,5 +1,5 @@
 Template.ProfilePanelStuPerform.onRendered(function(){ 
-   var chart = new CanvasJS.Chart("chartContainer",
+   var barchart = new CanvasJS.Chart("BarChartContainer",
     {
       title:{
         text: "Students/Grades"    
@@ -38,8 +38,44 @@ Template.ProfilePanelStuPerform.onRendered(function(){
       }   
       ]
     });
-    chart.render();
-     
+    barchart.render();
+   
+   
+   var piechart = new CanvasJS.Chart("PieChartContainer",
+	{
+		title:{
+			text: "Percentage of Graduates"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "center",
+			horizontalAlign: "left",
+			fontSize: 20,
+			fontFamily: "Helvetica"        
+		},
+		theme: "theme2",
+		data: [
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,      
+			showInLegend: true,
+			toolTipContent:"{legendText} {y}%",
+			dataPoints: [
+				{  y: 0.50, legendText:"Top 10 Universities", label: "Top 10 Universities" },
+				{  y: 0.50, legendText:"Top 20 Universities", label: "Top 20 Universities" },
+				{  y: 0.50, legendText:"Top 30 Universities", label: "Top 30 Universities" },
+				{  y: 0.50, legendText:"Top 40 Universities" , label: "Top 40 Universities"},       
+				{  y: 0.50, legendText:"Top 50 Universities" , label: "Top 50 Universities"},
+                {  y: 0.50, legendText:"Other Colleges" , label: "Other Colleges"},
+                {  y: 97.00, legendText:"College Dropouts" , label: "College Dropouts"}
+			]
+		}
+		]
+	});
+	piechart.render();
 });
 
 

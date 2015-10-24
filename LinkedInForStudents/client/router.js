@@ -7,7 +7,7 @@ Router.route('/test-people', function(){
 });
 
 Router.route('/profile-people', function(){
-  this.render('ProfilePanel')
+  this.render('ProfilePanelStuPerform')
   this.render('ProfileSide',{to:"aside"})
 });
 
