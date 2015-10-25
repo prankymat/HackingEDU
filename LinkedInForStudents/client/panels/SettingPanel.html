@@ -1,0 +1,114 @@
+<template name="SettingPanel">
+    <div style="width: 80%; margin: 0 auto;">
+        <div class="row">
+            <div class="col s3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/profile.jpeg">
+                        <i class="material-icons">settings</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col s9">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="First Name" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+      
+                    <form action="#">
+                        <p>
+                            <input name="group1" type="radio" id="test1" />
+                            <label for="test1">Male</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test2" />
+                            <label for="test2">Female</label>
+                        </p>
+                    </form>
+        
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="curschool" type="text" class="validate">
+                            <label for="curschool">Current School</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div style="border: 1px solid rgba(51, 51, 51, 0.12); background: #F5F2F0 none repeat scroll 0% 0%; height: 100px;">
+            <span>Subjects:</span><br>
+              <div class="chip">
+                Math
+                <i class="material-icons">close</i>
+              </div>
+                <div class="chip">
+                    English
+                    <i class="material-icons">close</i>
+                </div>
+                <a class="btn-floating btn-small waves-effect waves-light red" style="float: right;"><i class="material-icons">add</i></a>
+        </div>
+        
+        <div style="border: 1px solid rgba(51, 51, 51, 0.12); background: #F5F2F0 none repeat scroll 0% 0%; height: 100px;">
+            <span>Skills:</span><br>
+                <div class="chip">
+                    Netflix
+                    <i class="material-icons">close</i>
+                </div>
+                <div class="chip">
+                    Chill
+                    <i class="material-icons">close</i>
+                </div>
+                <a class="btn-floating btn-small waves-effect waves-light red" style="float: right;"><i class="material-icons">add</i></a>
+        </div>
+        
+        <div>
+            <ul class="collapsible popout" data-collapsible="accordion">Experience:
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">work</i>
+                        <div class="row" style="height: 100%;">
+                            <div class="input-field col s6" style="margin-top: 0; height: 100%">
+                            <input placeholder="Position Name" type="text" class="validate" style="height: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="row" style="height: 100%;">
+                            <div class="input-field col s6" style="height: 100%">
+                            <input placeholder="Description" type="text" class="validate" style="height: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">work</i>Second</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">work</i>Third</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</template>
