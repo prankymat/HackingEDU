@@ -23,7 +23,7 @@
                         <td rowspan="3" style="width: 205px"><img class="circle" src="{{this.image_url}}" style="height:200px; width:200px"></td>
                         <td style="width: 205px"><h4>{{this.FirstName}} {{this.LastName}}</h4></td>
                     </tr><tr>
-                       <td style="width: 205px">{{#each this.Subjects}} {{this}}    {{/each}}</td> 
+                       <td style="width: 205px">{{#each this.Subjects}} +{{this}}    {{/each}}</td> 
                     </tr><tr>
                         <td style="width: 205px">{{this.Schools}}</td>
                     </tr>
