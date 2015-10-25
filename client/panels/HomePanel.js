@@ -30,6 +30,7 @@ Template.HomePanel.events({
       event.preventDefault();
       var text = event;
       console.log(text);
+      var text = document.getElement
       //console.log(event.currentTarget."0".form.firstElementChild.value);
             alert("DSFS");
     }
