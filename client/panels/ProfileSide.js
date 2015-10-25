@@ -4,6 +4,8 @@ Template.ProfileSide.helpers({
   },
 
   theTeacher: function() {
-    return (Teacher.find({TeacherID:this.aTeacherID}).fetch());
+  	console.log(this.aTeacherID);
+  	console.log(Teacher.findOne({TeacherID:parseInt(this.aTeacherID)}));
+    return (Teacher.findOne({TeacherID:parseInt(this.aTeacherID)}));
   }
 });
