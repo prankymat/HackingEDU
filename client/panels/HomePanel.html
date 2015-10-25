@@ -11,8 +11,8 @@
       <div class="row" style="position: absolute; z-index: 100; width: 60em;">
         <div class="col s8 offset-s3" style="position: absolute; top:-80px;">
           <div class="card-panel">
-            <form class="searchForm">
-              <input placeholder="Search for a teacher" type="search" name="hh">
+            <form class="searchForm" method="post">
+              <input placeholder="Search for a teacher" id="query" type="text" class="validate" onkeypress="avoid_enter2(event)">
             </form>
             {{#if isQuerying}}
             {{#if teachersResults.count}}

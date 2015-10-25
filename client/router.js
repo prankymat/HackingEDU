@@ -19,9 +19,12 @@ Router.route('/profile-people/:aTeacherID', function(){
 	data: function (){ return {aTeacherID:this.params.aTeacherID}}})
 });
 
-Router.route('/profile-school', function(){
-  this.render('ProfilePanelSchool')
-  this.render('SchoolSide',{to:"aside"})
+Router.route('/profile-school/:aSchoolID', function(){
+  this.render('ProfilePanelSchool',{
+   data: function () { return {aSchoolID:this.params.aSchoolID}}})
+  this.render('SchoolSide',{
+    to:"aside",
+  data: function () { return {aSchoolID:this.params.aSchoolID}}})
 });
 
 Router.route('/Setting', function(){

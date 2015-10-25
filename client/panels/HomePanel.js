@@ -10,8 +10,8 @@ Template.HomePanel.helpers({
   schoolsResults: function() {
     return School.find({SchoolName: {'$regex':Session.get('home-query')}})
   },
+
   isQuerying: function() {
-    console.log("checking")
     return Session.get('is-querying');
   }
 })
@@ -26,5 +26,13 @@ Template.HomePanel.events({
   },
   'blur #query': function() {
     Session.set('is-querying', false);
-  }
-})
+  },  
+  'search .searchForm': function (event) {
+      event.preventDefault();
+      var text = event;
+      console.log(text);
+      var text = document.getElement
+      //console.log(event.currentTarget."0".form.firstElementChild.value);
+            alert("DSFS");
+    }
+  });
