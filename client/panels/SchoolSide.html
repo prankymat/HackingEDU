@@ -1,26 +1,13 @@
 <template name="SchoolSide">
     <div class="card" style="margin: 0;" id="sidenav">
         <div class="card-image">
-            <img src="/images/stanford.jpg">
-            <span class="card-title">Stanford University</span>
+            <img src="{{thisSchool.image_url}}">
+            <span class="card-title">{{thisSchool.SchoolName}}</span>
         </div>
         <div class="card-content">
-            <p>Great school... I guess...</p>
-        </div>
-        <div class="card-content">
-            <p>Subjects:</p>
-            <div class="chip">Math</div>
-            <div class="chip">English</div>
-        </div>
-        <div class="card-content">
-            <p>Skills:</p>
-            <div class="chip">Netflix</div>
-            <div class="chip">Chill</div>
-        </div>
-        <div class="card-action">
-            <a href="#">Achievements</a><br>
-            <a href="#">Student Performance</a><br>
-            <a href="#">Comment</a>            
+            <p>Address:</p>
+            <div class="chip">{{thisSchool.Street}}</div>
+            <div class="chip">{{thisSchool.City}}, {{thisSchool.State}}</div>
         </div>
     </div>
 </template>
