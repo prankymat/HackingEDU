@@ -17,7 +17,7 @@
             {{/if}}
 
             {{#each teacherResults}}
-            <div class="section">
+            <a href="{{pathFor 'profile-people'}}/profile-people/{{this.TeacherID}}"><div class="section">
                 <table border="2">
                     <tr>
                         <td rowspan="3" style="width: 205px"><img class="circle" src="{{this.image_url}}" style="height:200px; width:200px"></td>
@@ -28,7 +28,7 @@
                         <td style="width: 205px">{{this.Schools}}</td>
                     </tr>
                 </table>
-            </div>
+            </div></a>
             <div class="divider"></div>
             {{/each}}
         </div>
@@ -43,7 +43,7 @@
             {{/if}}
 
             {{#each schoolResults}}
-            <div class="section">
+            <a href="{{pathFor 'profile-school'}}"><div class="section">
                 <table>
                     <tr>
                         <td rowspan="3" style="width: 205px"><img class="circle responsive-img" src="{{this.image_url}}" style="height:200px; width:200px"></td>
@@ -54,7 +54,7 @@
                         <td algin="left" style="width: 205px">{{this.numTeachers}} teacher(s)</td>
                     </tr>
                 </table>
-            </div>
+            </div></a>
             <div class="divider"></div>
             {{/each}}
         </div>
