@@ -11,7 +11,7 @@ Template.SearchResults.helpers({
       _.each(arr,function(teacher){
         teacher.Schools = school_arr[(teacher.Schools) % 3];
       });
-
+      console.log(arr);
       return arr;
   },
 
