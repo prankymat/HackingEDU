@@ -1,6 +1,12 @@
 <template name="ProfilePanelAchievements">
     <div>
-        <div></div>
-        <div></div>
+    	{{#each achievement}}
+        	<tr>
+        		<img src= achievement.image_url>
+        		<td>achievement.Title</td>
+        		<td>achievement.DateOfEvent</td>
+        		<td>achievement.Description</td>
+        	</tr>		
+        {{/each}}
     </div>
 </template>
