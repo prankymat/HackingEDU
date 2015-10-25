@@ -70,21 +70,71 @@ SchoolGrades = new Mongo.Collection('schoolGrades');
         }
     }
 
-    //These code will add the test to teacher
+/*
+    teachers = Teacher.find({}).fetch()
     tests = Test.find({}).fetch()
-    for (var i = 0; i < tests.length; i++)
+    for (var i = 0; i < teachers.length; i++)
     {
-        for (var j = 0; j < teachers.length; j++)
+        //I have a single teacher and I need to loop throught the test array to see if it match
+        teacher = teachers[i]
+        //console.log(tests[0])
+
+        if (teacher.Tests != null)
+                var gradeArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        else
+                var gradeArray = teacher.Tests
+
+        //console.log(gradeArray)
+        for (var j = 0; j < tests.length; j++)
         {
-            var teacherID = teachers[j].TeacherID
-            if (teacherID == tests[i].TeacherID)
+            //first compare the tests id with teacher id
+            //console.log(j)
+            //console.log(tests[j].length)
+            if (tests[j].TeacherID == teacher.TeacherID)
             {
-                Teacher.update({TeacherID: teacherID}, {$addToSet: {"Tests": tests[i].TestID}})
-                break
+                //console.log(tests[j])
+                //some of the score is undefine!
+                var scoresTwo = tests[j].Scores
+                console.log(tests.length)
+                //console.log(scoresTwo.length)
+                for (var m = 0; m < scoresTwo.length; m++)
+                {
+                    //this give me a single score
+                    var score = scoresTwo[m]
+                    var index
+                    if (score > 98)
+                        index = 0 //A+
+                    else if (score > 92)
+                        index = 1 //A
+                    else if (score > 90)
+                        index = 2 //A-
+                    else if (score > 87)
+                        index = 3 //B+
+                    else if (score > 85)
+                        index = 4 //B
+                    else if (score > 80)
+                        index = 5 //B-
+                    else if (score > 77)
+                        index = 6 //C+
+                    else if (score > 75)
+                        index = 7 //C
+                    else if (score > 70)
+                        index = 8 //C-
+                    else if (score > 60)
+                        index = 9 //D
+                    else
+                        index = 10 //F
+                    
+                    gradeArray[index]++
+                //update the teacher Tests table
+                    Teacher.update({TeacherID: teacher.SchoolID}, {$set: {Tests: gradeArray}})
+                //break the loop in the end
+                    break
+                }
             }
         }
     }
-
+*/
     //These code should count the num of each grade
     schoolGrades = SchoolGrades.find({}).fetch() //an array
     tests = Test.find({}).fetch() //an array
@@ -138,4 +188,4 @@ SchoolGrades = new Mongo.Collection('schoolGrades');
         }
         //insert the array to it
         SchoolGrades.update({SchoolID: school.SchoolID}, {$set: {Grades: gradeArray}})
-   }
+    }

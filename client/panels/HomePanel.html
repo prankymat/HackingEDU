@@ -20,16 +20,21 @@
             <ul class="collapsible">
               {{#each teachersResults}}
               <li>
-                <div class="collapsible-header">{{FirstName}} {{LastName}}</div>
+                <div class="collapsible-header" >
+                  <a href="/profile-people/{{TeacherID}}">{{FirstName}} {{LastName}}</a>
+                </div>
               </li>
               {{/each}}
             </ul>
-            {{/if}} {{#if schoolsResults.count}}
+            {{/if}} 
+            {{#if schoolsResults.count}}
             <h5>Schools</h5>
             <ul class="collapsible">
               {{#each schoolsResults}}
               <li>
-                <div class="collapsible-header">{{SchoolName}}</div>
+                <div class="collapsible-header">
+                  <a href="/profile-school/{{SchoolID}}">{{SchoolName}}</a>
+                </div>
               </li>
               {{/each}}
             </ul>
