@@ -5,7 +5,6 @@ query_param: function() {
 
   teacherResults: function() {
   	var arr = Teacher.find({Schools:parseInt(this.aSchoolID)}).fetch();
-  	console.log(arr);
     return arr;
   }
 
