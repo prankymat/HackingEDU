@@ -1,13 +1,13 @@
 <template name="SearchResults">
     <div class="row">
-        <div class="col s9">
+        <div class="col s12">
             <ul class="tabs">
-                <li class="tab col s6" onclick={{clicked}}><a class="active" href="#test1">Teachers</a></li>
-                <li class="tab col s6" onclick={{clicked}}><a href="#test2">Schools</a></li>
+                <li class="tab col s6"><a class="active" href="#test1">Teachers</a></li>
+                <li class="tab col s6"><a href="#test2">Schools</a></li>
             </ul>
         </div>
         
-        <div id="test1" class="col s9">
+        <div id="test1" class="col s12">
             {{#unless teacherResults.length}}
             <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
             {{/unless}}
@@ -33,7 +33,7 @@
             {{/each}}
         </div>
 
-        <div id="test2" class="col s9">
+        <div id="test2" class="col s12">
             {{#unless schoolResults.length}}
             <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
             {{/unless}}

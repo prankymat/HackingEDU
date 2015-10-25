@@ -28,18 +28,8 @@ Template.SearchResults.helpers({
   cannotModal: function() {
     return Session.get('cannotModal');
   },
-
-  clickedOne: function(){
-    Session.set("tab", 0);
-  },
-
-  clickedTwo: function(){
-    Session.set("tab", 1);
-  }
-
 });
 
 Template.SearchResults.onRendered(function(){
   $('ul.tabs').tabs();
-  Session.set("tab", 0);
 });

@@ -1,5 +1,6 @@
 Template.SearchSide.helpers({
   teacherResultsSchool: function() {
+      console.log("DDD");
       Session.set("objIncrement",Session.get("objIncrement") + 1);
       var q = new RegExp(this.searchQuery,'i');
       var arr = Teacher.find({$or: [{"FirstName":{'$regex':q}},{"LastName":{'$regex':q}}]}).fetch();
@@ -16,6 +17,7 @@ Template.SearchSide.helpers({
   },
 
   teacherResultsSubject: function() {
+     console.log("HI");
       Session.set("objIncrement",Session.get("objIncrement") + 1);
       var q = new RegExp(this.searchQuery,'i');
       var arr = Teacher.find({$or: [{"FirstName":{'$regex':q}},{"LastName":{'$regex':q}}]}).fetch();
