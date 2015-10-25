@@ -1,0 +1,22 @@
+<template name="SearchSide">
+    <nav id="sidenav" style="background: #FFF">
+    	{{#unless Session.tab}}
+        <h3>School</h3>
+        	{{#each teacherResultsSchool}}
+        	<input type="checkbox" id="{{this.objIncrement}}" /><label for="{{this.objIncrement}}">{{this.Schools}}</label> 
+        	{{/each}}
+
+        <h3>Subject</h3>
+        	{{#each teacherResultsSubject}}
+        	<input type="checkbox" id="{{this.objIncrement}}" /><label for="{{this.objIncrement}}">{{this}}</label> 
+        	{{/each}}
+        {{/unless}}
+
+        {{#if Session.tab}}
+        <h3>Location</h3>
+        	{{#each schoolResults}}
+        	<input type="checkbox" id="{{this.objIncrement}}" /><label for="{{this.objIncrement}}">{{this.City}}</label> 
+        	{{/each}}
+        {{/if}}
+    </nav>
+</template>

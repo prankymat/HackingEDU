@@ -1,0 +1,18 @@
+<template name="ProfilePanelSchool">
+    {{#each teacherResults}}
+    <div style="width: 200px; height: 440px;display:inline-block; margin-top: 0px;">
+        <div class="card" style="height:100%;">
+            <div class="card-image">
+                <img src="{{this.image_url}}">
+                <span class="card-title">{{this.FirstName}} {{this.LastName}}</span>
+            </div>
+            <div class="card-content">
+                <p>Subjects:</p>
+                {{#each this.Subjects}}
+                <div class="chip">{{this}}</div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</template>

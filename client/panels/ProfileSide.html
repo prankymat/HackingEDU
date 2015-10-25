@@ -1,0 +1,22 @@
+<template name="ProfileSide">
+    <div class="card" style="margin: 0;" id="sidenav">
+        <div class="card-image">
+            <img src="{{theTeacher.image_url}}">
+            <span class="card-title">{{theTeacher.FirstName}} {{theTeacher.LastName}}</span>
+        </div>
+        <div class="card-content">
+            <p>I love teaching... Or not.</p>
+        </div>
+        <div class="card-content">
+            <p>Subjects:</p>
+            {{#each theTeacher.Subjects}}
+            <div class="chip">{{this}}</div>
+            {{/each}}
+        </div>
+        <div class="card-action">
+            <a href="#">Achievements</a><br>
+            <a href="#">Student Performance</a><br>
+            <a href="#">Comment</a>            
+        </div>
+    </div>
+</template>

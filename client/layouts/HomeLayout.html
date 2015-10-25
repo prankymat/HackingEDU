@@ -1,4 +1,4 @@
-<template name="MainLayout">
+<template name="HomeLayout">
   <header>
     {{> TopNav}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,13 +18,15 @@
    </div>
   {{/unless}}
 
+<div class="row">
   <aside>
     {{> yield "aside"}}
   </aside>
-
   <article>
     {{> yield}}
   </article>
+</div>
+
 
   <footer>
     {{> yield "footer"}}

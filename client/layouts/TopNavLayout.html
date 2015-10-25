@@ -1,0 +1,39 @@
+<template name="TopNav">
+  <script>
+    function avoid_enter(e){
+      if(e.which===13){
+        e.preventDefault();
+        var value=$('#input-bar').val();
+        window.location.href = "http://localhost:3000/search/"+value;
+      }
+    }
+
+    function avoid_enter2(e){
+      if(e.which===13){
+        e.preventDefault();
+        var value=$('input#query').val();
+        window.location.href = "http://localhost:3000/search/"+value;
+      }
+    }
+    </script>
+  <div class="navbar-fixed" style="top:0px">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo" style="margin-left:10px; font-weight: 400; font-family: 'Dancing Script', cursive;">LFT</a>
+        <form id="search-bar">
+          <input id="input-bar" type="text" size="40" placeholder="Search..." onkeypress="avoid_enter(event)"/>
+        </form>
+        <ul class="right hide-on-med-and-down" id="nav-mobile">
+          {{#unless currentUser}}
+          <li>{{> loginButtons align="right"}}</li>
+          {{/unless}}
+          {{#if currentUser}}
+          <li>{{currentUser}}</li>
+          <li onclick="new function(){Meteor.logout();}">Log Out</li>
+          <li><a href="{{pathFor 'Setting'}}">Setting</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</template>
