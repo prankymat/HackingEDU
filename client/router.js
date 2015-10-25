@@ -11,12 +11,12 @@ Router.route('/profile-people', function(){
   this.render('ProfileSide',{to:"aside"})
 });
 
-Router.route('/search/:searchType/:searchQuery', function(){
+Router.route('/search/:searchQuery', function(){
 	this.render('SearchResults',{
-		data: function (){ return {searchQuery:this.params.searchQuery, searchType:this.params.searchType}}});
+		data: function (){ return {searchQuery:this.params.searchQuery}}});
 	this.render('SearchSide',{
 		to:"aside",
-		data: function (){ return {searchQuery:this.params.searchQuery, searchType:this.params.searchType}}});
+		data: function (){ return {searchQuery:this.params.searchQuery}}});
 });
 
 Router.route('/', function(){

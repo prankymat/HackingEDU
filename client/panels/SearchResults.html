@@ -1,16 +1,62 @@
 <template name="SearchResults">
-	{{#unless people_count}}
-    <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
-    {{/unless}}
+    <div class="row">
+        <div class="col s9">
+            <ul class="tabs">
+                <li class="tab col s6" onclick={{clicked}}><a class="active" href="#test1">Teachers</a></li>
+                <li class="tab col s6" onclick={{clicked}}><a href="#test2">Schools</a></li>
+            </ul>
+        </div>
+        
+        <div id="test1" class="col s9">
+            {{#unless teacherResults.length}}
+            <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
+            {{/unless}}
 
-    {{#if people_count}}
-    <h4 class="flow-text center-align">Showing {{people_count}} results for "{{query_param}}"</h4>
-    {{/if}}
+            {{#if teacherResults.length}}
+            <h4 class="flow-text center-align">Showing {{teacherResults.length}} result(s) for "{{query_param}}"</h4>
+            {{/if}}
 
-    {{#each results}}
-	<div class="section">
-		{{this}}
+            {{#each teacherResults}}
+            <div class="section">
+                <table border="2">
+                    <tr>
+                        <td rowspan="3"><img class="circle" src="http://placehold.it/150x150"></td>
+                        <td><h4>{{this.FirstName}} {{this.LastName}}</h4></td>
+                    </tr><tr>
+                       <td>{{#each this.Subjects}} {{this}}    {{/each}}</td> 
+                    </tr><tr>
+                        <td>{{this.Schools}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divider"></div>
+            {{/each}}
+        </div>
+
+        <div id="test2" class="col s9">
+            {{#unless schoolResults.length}}
+            <h4 class="flow-text center-align">Sorry, no matches for "{{query_param}}"</h4>
+            {{/unless}}
+
+            {{#if teacherResults.length}}
+            <h4 class="flow-text center-align">Showing {{schoolResults.length}} result(s) for "{{query_param}}"</h4>
+            {{/if}}
+
+            {{#each schoolResults}}
+            <div class="section">
+                <table>
+                    <tr>
+                        <td rowspan="3"><img class="circle responsive-img" src="http://placehold.it/150x150"></td>
+                        <td><h4>{{this.SchoolName}}</h4></td>
+                    </tr><tr>
+                       <td>{{this.City}}, {{this.State}}</td> 
+                    </tr><tr>
+                        <td>{{this.numTeachers}} teacher(s)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divider"></div>
+            {{/each}}
+        </div>
     </div>
-    <div class="divider"></div>
-    {{/each}}
 </template>
