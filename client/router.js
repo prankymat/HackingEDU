@@ -13,7 +13,8 @@ Router.route('/test-people', function(){
 });
 
 Router.route('/profile-people/:aTeacherID', function(){
-  this.render('ProfilePanelStuPerform')
+  this.render('ProfilePanelStuPerform',{
+    data: function (){ return {aTeacherID:this.params.aTeacherID}}})
   this.render('ProfileSide',{
   	to:"aside",
 	data: function (){ return {aTeacherID:this.params.aTeacherID}}})
