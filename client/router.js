@@ -1,3 +1,9 @@
+
+Router.route('/', function(){
+  this.layout('HomeLayout')
+  this.render('HomePanel')
+})
+
 Router.configure({
   layoutTemplate: 'MainLayout'
 });
@@ -29,7 +35,3 @@ Router.route('/search/:searchQuery', function(){
 		data: function (){ return {searchQuery:this.params.searchQuery}}})
 });
 
-Router.route('/', function(){
-  this.layout('HomeLayout')
-  this.render('HomePanel')
-})

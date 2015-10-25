@@ -11,8 +11,8 @@
       <div class="row" style="position: absolute; z-index: 100; width: 60em;">
         <div class="col s8 offset-s3" style="position: absolute; top:-80px;">
           <div class="card-panel">
-            <form class="" action="submit" method="post">
-              <input placeholder="Search for a teacher" id="query" type="text" class="validate">
+            <form class="searchForm">
+              <input placeholder="Search for a teacher" type="search" name="hh">
             </form>
             {{#if isQuerying}}
             {{#if teachersResults.count}}
@@ -20,22 +20,26 @@
             <ul class="collapsible">
               {{#each teachersResults}}
               <li>
-                <div class="collapsible-header">{{FirstName}} {{LastName}}</div>
+                <div class="collapsible-header" >
+                  <a href="/profile-people/{{TeacherID}}">{{FirstName}} {{LastName}}</a>
+                </div>
               </li>
               {{/each}}
             </ul>
-            {{/if}} {{#if schoolsResults.count}}
+            {{/if}} 
+            {{#if schoolsResults.count}}
             <h5>Schools</h5>
             <ul class="collapsible">
               {{#each schoolsResults}}
               <li>
-                <div class="collapsible-header">{{SchoolName}}</div>
+                <div class="collapsible-header">
+                  <a href="/profile-school/{{SchoolID}}">{{SchoolName}}</a>
+                </div>
               </li>
               {{/each}}
             </ul>
             {{/if}}
             {{/if}}
-
 
           </div>
         </div>

@@ -4,7 +4,8 @@ Template.HomePanel.onRendered(function(){
 
 Template.HomePanel.helpers({
   teachersResults: function() {
-    return Teacher.find({$or: [{"FirstName":{'$regex':Session.get('home-query')}},{"LastName":{'$regex':Session.get('home-query')}}]})
+    return Teacher.find({$or: 
+      [{"FirstName": {'$regex':Session.get('home-query')}},{"LastName":{'$regex':Session.get('home-query')}}, {"TeacherID": {'$regex':Session.get('home-query')}}]})
   },
   schoolsResults: function() {
     return School.find({SchoolName: {'$regex':Session.get('home-query')}})
@@ -25,11 +26,5 @@ Template.HomePanel.events({
   },
   'blur #query': function() {
     Session.set('is-querying', false);
-  },
-  'submit .new-task': function(event) {
-    event.preventDefault();
-    var text = event.target.text.value;
-    
   }
-
 })
