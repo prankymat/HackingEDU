@@ -1,4 +1,4 @@
-Template.MainLayout.helpers({
+Template.HomeLayout.helpers({
   'connected': function(){
     return Meteor.status().connected;
   }

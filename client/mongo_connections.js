@@ -1,1 +1,2 @@
-People = new Mongo.Collection('people');
+Teacher = new Mongo.Collection('teacher');
+School = new Mongo.Collection('school');
