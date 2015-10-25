@@ -4,10 +4,12 @@ Template.HomePanel.onRendered(function(){
 
 Template.HomePanel.helpers({
   teachersResults: function() {
-    return Teacher.find({$or: [{"FirstName":{'$regex':Session.get('home-query')}},{"LastName":{'$regex':Session.get('home-query')}}]})
+    var q = new RegExp(Session.get('home-query'), 'i');
+    return Teacher.find({$or: [{"FirstName":{'$regex': q}},{"LastName":{'$regex': q}}]})
   },
   schoolsResults: function() {
-    return School.find({SchoolName: {'$regex':Session.get('home-query')}})
+    var q = new RegExp(Session.get('home-query'), 'i');
+    return School.find({SchoolName: {'$regex':q}})
   },
   isQuerying: function() {
     console.log("checking")
@@ -27,5 +29,9 @@ Template.HomePanel.events({
   'blur #query': function() {
     console.log('blurred');
     Session.set('is-querying', false);
+  },
+  'submit #query-form': function(e) {
+    e.preventDefault();
+    Router.go('/search/' + $('#query').val());
   }
 })
