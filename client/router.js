@@ -6,9 +6,21 @@ Router.route('/test-people', function(){
   this.render('LivePanel')
 });
 
-Router.route('/profile-people', function(){
+Router.route('/profile-people/:aTeacherID', function(){
   this.render('ProfilePanelStuPerform')
-  this.render('ProfileSide',{to:"aside"})
+  this.render('ProfileSide',{
+  	to:"aside",
+	data: function (){ return {aTeacherID:this.params.aTeacherID}}})
+});
+
+Router.route('/profile-school', function(){
+  this.render('ProfilePanelSchool')
+  this.render('SchoolSide',{to:"aside"})
+});
+
+Router.route('/Setting', function(){
+  this.layout('HomeLayout')
+  this.render('SettingPanel')
 });
 
 Router.route('/search/:searchQuery', function(){

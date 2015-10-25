@@ -1,16 +1,22 @@
 <template name="TopNav">
-  <div class="navbar-fixed teal" style="top:0px">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo" style="margin-left:10px; font-weight: 400; font-family: 'Dancing Script', cursive;">HackingEDU</a>
-        <ul class="right hide-on-med-and-down">
+  <div class="navbar-fixed" style="top:0px">
+    <ul id="dropdown1" class="dropdown-content">
           {{#unless currentUser}}
           <li>{{> loginButtons}}</li>
           {{/unless}}
           {{#if currentUser}}
           <li>{{currentUser}}</li>
           {{/if}}
-          <li><a href="{{pathFor 'test-people'}}">Test People</a></li>
+          <li><a href="{{pathFor 'Setting'}}">Setting</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo" style="margin-left:10px; font-weight: 400; font-family: 'Dancing Script', cursive;">LFT</a>
+        <form id="search-bar">
+          <input id="input-bar" type="text" size="40" placeholder="Search..." onkeyup="search(event)"  onkeypress="avoid_enter(event)"/>
+        </form>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
     </nav>

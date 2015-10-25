@@ -1,24 +1,26 @@
-<template name="ProfileSide">
+<template name="SchoolSide">
     <div class="card" style="margin: 0;" id="sidenav">
-        {{#each theTeacher}}
         <div class="card-image">
-            <img src="{{this.image_url}}">
-            <span class="card-title">{{this.FirstName}} {{this.LastName}}</span>
+            <img src="/images/stanford.jpg">
+            <span class="card-title">Stanford University</span>
         </div>
         <div class="card-content">
-            <p>I love teaching... Or not.</p>
+            <p>Great school... I guess...</p>
         </div>
         <div class="card-content">
             <p>Subjects:</p>
-            {{#each this.Subjects}}
-            <div class="chip">{{this}}</div>
-            {{/each}}
+            <div class="chip">Math</div>
+            <div class="chip">English</div>
+        </div>
+        <div class="card-content">
+            <p>Skills:</p>
+            <div class="chip">Netflix</div>
+            <div class="chip">Chill</div>
         </div>
         <div class="card-action">
             <a href="#">Achievements</a><br>
             <a href="#">Student Performance</a><br>
             <a href="#">Comment</a>            
         </div>
-        {{/each}}
     </div>
 </template>
