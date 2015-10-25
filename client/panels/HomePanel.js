@@ -21,11 +21,15 @@ Template.HomePanel.events({
     // console.log($('#query').val())
   },
   'focus #query': function() {
-    console.log("focused")
     Session.set('is-querying', true);
   },
   'blur #query': function() {
-    console.log('blurred');
     Session.set('is-querying', false);
+  },
+  'submit .new-task': function(event) {
+    event.preventDefault();
+    var text = event.target.text.value;
+    
   }
+
 })
