@@ -9,7 +9,6 @@ Template.SearchResults.helpers({
 
       var school_arr= ['San Jose High School','Homestead High School','Mountain View High School'];
       _.each(arr,function(teacher){
-        console.log(teacher.Schools);
         teacher.Schools = school_arr[(teacher.Schools) % 3];
       });
 
@@ -42,5 +41,5 @@ Template.SearchResults.helpers({
 
 Template.SearchResults.onRendered(function(){
   $('ul.tabs').tabs();
-  Session.set("tab", 1);
+  Session.set("tab", 0);
 });
